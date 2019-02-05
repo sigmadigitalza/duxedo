@@ -4,7 +4,8 @@
   "description": "utilities for reducing redux boilerplate code",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage --notify",
+    "test:watch": "jest --watchAll --coverage --notify",
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "postinstall": "node ./install.js",
     "semver:patch": "npm version patch",
