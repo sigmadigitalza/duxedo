@@ -1,0 +1,17 @@
+[ignore]
+.*/node_modules/.*
+.*/__tests__/.*
+.*/tests/.*
+.*/dist/.*
+.*\.ignore\.js
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+include_warnings=true
+
+[strict]

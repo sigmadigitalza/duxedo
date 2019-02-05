@@ -1,0 +1,8 @@
+**/*{.,-}min.js
+src/public/**
+node_modules
+dist
+coverage
+.environment
+.idea
+.local

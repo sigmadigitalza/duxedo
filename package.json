@@ -4,7 +4,16 @@
   "description": "utilities for reducing redux boilerplate code",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "version": "auto-changelog -p && git add CHANGELOG.md",
+    "postinstall": "node ./install.js",
+    "semver:patch": "npm version patch",
+    "semver:minor": "npm version minor",
+    "semver:major": "npm version major",
+    "distribute": "npm publish --access public",
+    "distribute:patch": "npm run semver:patch && npm run distribute",
+    "distribute:minor": "npm run semver:minor && npm run distribute",
+    "distribute:major": "npm run semver:major && npm run distribute"
   },
   "keywords": [
     "sigmadigital",
@@ -12,5 +21,19 @@
     "redux"
   ],
   "author": "Paul van Zyl <pushplaybang@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@sigmadigital/eslint-config-kitchensink": "^0.1.3",
+    "auto-changelog": "^1.11.0",
+    "babel-jest": "^24.1.0",
+    "eslint": "^5.13.0",
+    "flow-bin": "^0.92.0",
+    "jest": "^24.1.0",
+    "prettier": "^1.16.4"
+  },
+  "peerDependencies": {
+    "redux": ">= 4.0.1"
+  }
 }
