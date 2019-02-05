@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "utilities for reducing redux boilerplate code",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sigmadigitalza/redux-helpers.git"
+  },
   "scripts": {
     "test": "jest --coverage --notify",
     "test:watch": "jest --watchAll --coverage --notify",
