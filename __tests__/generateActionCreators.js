@@ -23,7 +23,7 @@ test('generate action creator with consistent signature', () => {
   expect(result.payload).toEqual({});
 });
 
-test('generate action creators from a list of actions', () => {
+test('generate consistent action creators from a list of actions', () => {
   const result = generateActionCreators(testActionns);
   expect(Object.keys(result)).toEqual(camelCaseActions);
 
@@ -31,6 +31,14 @@ test('generate action creators from a list of actions', () => {
     expect(result[action]()).toEqual({
       type: testActionns[index],
       payload: {},
+    }),
+  );
+
+  const prop = 42;
+  camelCaseActions.forEach((action, index) =>
+    expect(result[action]({ prop })).toEqual({
+      type: testActionns[index],
+      payload: { prop },
     }),
   );
 });
