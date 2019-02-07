@@ -18,7 +18,8 @@
     "distribute": "npm publish --access public",
     "distribute:patch": "npm run semver:patch && npm run distribute",
     "distribute:minor": "npm run semver:minor && npm run distribute",
-    "distribute:major": "npm run semver:major && npm run distribute"
+    "distribute:major": "npm run semver:major && npm run distribute",
+    "serve:coverage": "http-server ./coverage/lcov-report -p 7357"
   },
   "keywords": [
     "sigmadigital",
@@ -35,6 +36,7 @@
     "babel-jest": "^24.1.0",
     "eslint": "^5.13.0",
     "flow-bin": "^0.92.0",
+    "http-server": "^0.11.1",
     "jest": "^24.1.0",
     "prettier": "^1.16.4"
   },
