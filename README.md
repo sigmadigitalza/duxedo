@@ -10,3 +10,24 @@ Managing state with redux requires quite a bit of boilerplate code, especially w
 * DRY<span><sup>>TM</sup></span> out your code by defining actions, action creators and reducers with a single definition.
 * Consistency through a predefined opinionated structure, and single reliable pattern for action objects
 * Improve Readability and Maintainability by clearly defining actions and how state should change in a single place.
+
+
+# How
+
+```js
+import { createStore, combineReducers } from 'redux';
+import reduxGen from '@sigmadigital/redux-helpers';
+
+const defaultState = { count: 0 };
+
+// test input data
+const definition = {
+  INCREMENT: state => ({ ...state, count: state.count + 1 }),
+  DECREMENT: state => ({ ...state, count: state.count - 1 }),
+  SET: (state, { payload }) => ({ ...state, count: payload.count }),
+  RESET: state => ({ ...state, count: 0 }),
+};
+
+// this would usually be your default export from a single file for this part of the store.
+export const { constants, actions, reducer } = reduxGen({ definition, defaultState });
+```
