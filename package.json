@@ -1,6 +1,6 @@
 {
   "name": "@sigmadigital/redux-helpers",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "utilities for reducing redux boilerplate code",
   "main": "index.js",
   "repository": {
