@@ -12,10 +12,10 @@ Managing state with redux requires quite a bit of boilerplate code, especially w
 * Improve Readability and Maintainability by clearly defining actions and how state should change in a single place.
 
 
-# How
+# Enough Talk, Lets Code 
 
 ```js
-import { createStore, combineReducers } from 'redux';
+// src/store/lib/counter.js
 import reduxGen from '@sigmadigital/redux-helpers';
 
 const defaultState = { count: 0 };
@@ -28,6 +28,23 @@ const definition = {
   RESET: state => ({ ...state, count: 0 }),
 };
 
-// this would usually be your default export from a single file for this part of the store.
-export const { constants, actions, reducer } = reduxGen({ definition, defaultState });
+// this exports an object containing reducer, constants, actions
+export default  reduxGen({ definition, defaultState });
+
+// src/store/configure.js
+import { createStore, combineReducers } from 'redux';
+import { reducer } from './lib/counter'
+
+export default  () => createStore(combineReducers(reducer));
 ```
+the `reduxGen` function, takes the definition as above, and the default state, that you would usually pass to your reducer function. it redturns an object:
+
+```js
+{
+  reducer, // function to be passes to the store
+  actions, // object containing action creator functions, the action names have been transformed to camelCase
+  constants, // the actions in original case, as an object 
+}
+```
+
+Have a look at the expample folder, the tests, and sourcecode for more.

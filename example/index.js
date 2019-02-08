@@ -11,7 +11,8 @@ const definition = {
   RESET: state => ({ ...state, count: 0 }),
 };
 
-// this would usually be your default export from a single file for this part of the store.
+// this would usually be your default export from a single file,
+// can import using destructuring for the items you need.
 const { constants, actions, reducer } = reduxGen({ definition, defaultState });
 
 // include it just like any normal reducer
@@ -19,3 +20,5 @@ const store = () => createStore(combineReducers(reducer));
 
 // constants for define actions
 console.log(constants);
+console.log(actions);
+console.log(reducer);
