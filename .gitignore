@@ -4,6 +4,8 @@
 # project
 .idea
 .scratch
+.cache
+dist
 node_modules
 coverage
 dist/**/*
