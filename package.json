@@ -1,7 +1,7 @@
 {
-  "name": "@sigmadigital/redux-helpers",
+  "name": "@sigmadigital/duxedo",
   "version": "1.2.0",
-  "description": "utilities for reducing redux boilerplate code",
+  "description": "simple utility for reducing redux boilerplate and helping you scale redux",
   "main": "index.js",
   "repository": {
     "type": "git",
