@@ -1,5 +1,5 @@
 import React from 'react';
-import connect from 'react-redux/es/connect/connect';
+import { connect } from 'react-redux';
 import { actions } from '../store/definitions/counter';
 
 export const Counter = ({ count, inc, dec, set, reset }) => (

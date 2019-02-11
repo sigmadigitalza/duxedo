@@ -1,14 +1,14 @@
-# SigmaDigital Redux Helpers
-A tiny set of utilities to reduce redux boilerplate, and help you write cleaner code.
+# Duxedo for Redux
+A tiny utility to help you write cleaner code, and scale redux easily.
 
 ## What does it do?
-Take a single object definition of actions and how state changes, and produce an object containing  **immutable action constants**, an object containing **consistent action creators** and a **reducer function** that can be included easily in your store configuration.
+Take a single object definition of actions and how state changes, and produce an object containing  **immutable action constants**, an object containing **consistent FSA compliant action creators** and a **reducer function** that can be included easily in your store configuration, or components, just the way you would usually. No extra fuss.
 
 ## Motivation
-Managing state with redux requires quite a bit of boilerplate code, especially when you begin to use consistent patterns for action creators for example, you end up repeating yourself a great deal. Secondly as your app grows, recalling which actions do what, and how becomes a hunt through growing switch statements, and  multiple files. Not to mention that this growing API for your local application state, can increase the time it takes to on-board new team members.
+Managing state with redux requires quite a bit of boilerplate code, especially when you begin to use consistent patterns for action creators for example, you end up repeating yourself a great deal. Secondly as your app grows, recalling which actions do what, and how becomes a hunt through growing switch statements, and  multiple files. Not to mention that this growing API for your local application state, can increase the time it takes to on-board new team members, along with increasing support, maintenance, and iteration time.
 
 * DRY<span><sup>>TM</sup></span> out your code by defining actions, action creators and reducers with a single definition.
-* Consistency through a predefined opinionated structure, and single reliable pattern for action objects
+* Consistency through a predefined opinionated structure, and single reliable pattern for action objects. ([FSA](https://github.com/redux-utilities/flux-standard-action) compliant)
 * Improve Readability and Maintainability by clearly defining actions and how state should change in a single place.
 
 
@@ -52,5 +52,9 @@ the `duxedo` function takes the definition as above, and the default state, that
 }
 ```
 
-Have a look at the `/expample` directory for a full example with redux and react.
+Have a look at the `/expample` directory for a full example with redux and react. Alternatively, have a look at the [example app](https://zz2yvwmmy4.codesandbox.io/) or fork the sandbox here:
 
+[![Edit Duxedo for Redux](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/zz2yvwmmy4)
+
+----
+A **Sigma Digital** Project. Copyright 2019. License **MIT**.

@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sigmadigitalza/redux-helpers.git"
+    "url": "git+https://github.com/sigmadigitalza/duxedo.git"
   },
   "scripts": {
     "test": "jest --coverage --notify",
