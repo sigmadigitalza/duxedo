@@ -1,5 +1,5 @@
 # SigmaDigital Redux Helpers
-A tiny set of utilities to reduce redux boilerplate, and help your write cleaner code.
+A tiny set of utilities to reduce redux boilerplate, and help you write cleaner code.
 
 ## What does it do?
 Take a single object definition of actions and how state changes, and produce an object containing  **immutable action constants**, an object containing **consistent action creators** and a **reducer function** that can be included easily in your store configuration.
@@ -15,12 +15,13 @@ Managing state with redux requires quite a bit of boilerplate code, especially w
 # Enough Talk, Lets Code 
 
 ```js
-// src/store/lib/counter.js
-import reduxGen from '@sigmadigital/redux-helpers';
+// src/store/definitions/counter.js
+import duxedo from '@sigmadigital/redux-helpers';
 
+// define your default state
 const defaultState = { count: 0 };
 
-// test input data
+// Define your actions and how state should change
 const definition = {
   INCREMENT: state => ({ ...state, count: state.count + 1 }),
   DECREMENT: state => ({ ...state, count: state.count - 1 }),
@@ -29,22 +30,27 @@ const definition = {
 };
 
 // this exports an object containing reducer, constants, actions
-export default  reduxGen({ definition, defaultState });
+export const { reducer, actions, constants } = duxedo({
+  definition,
+  defaultState,
+});
 
-// src/store/configure.js
+// src/store/index.js
 import { createStore, combineReducers } from 'redux';
-import { reducer } from './lib/counter'
+import { reducer as counter } from './definitions/counter';
 
-export default  () => createStore(combineReducers(reducer));
+export default () => createStore(combineReducers({ counter }));
+
 ```
-the `reduxGen` function, takes the definition as above, and the default state, that you would usually pass to your reducer function. it redturns an object:
+the `duxedo` function takes the definition as above, and the default state, that you would usually pass to your reducer function and returns an object:
 
 ```js
 {
   reducer, // function to be passes to the store
-  actions, // object containing action creator functions, the action names have been transformed to camelCase
+  actions, // object containing action creator functions, note that the action names have been transformed to **camelCase**
   constants, // the actions in original case, as an object 
 }
 ```
 
-Have a look at the expample folder, the tests, and sourcecode for more.
+Have a look at the `/expample` directory for a full example with redux and react.
+

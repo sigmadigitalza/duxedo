@@ -18,6 +18,8 @@ test('generate action creator with consistent signature', () => {
   expect(result).toEqual({
     type: camelCaseActions[0],
     payload: {},
+    meta: {},
+    error: false,
   });
 
   expect(result.payload).toEqual({});
@@ -31,6 +33,8 @@ test('generate consistent action creators from a list of actions', () => {
     expect(result[action]()).toEqual({
       type: testActionns[index],
       payload: {},
+      meta: {},
+      error: false,
     }),
   );
 
@@ -39,6 +43,8 @@ test('generate consistent action creators from a list of actions', () => {
     expect(result[action]({ prop })).toEqual({
       type: testActionns[index],
       payload: { prop },
+      meta: {},
+      error: false,
     }),
   );
 });

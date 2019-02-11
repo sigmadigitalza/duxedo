@@ -2,7 +2,7 @@ import generateReducer from '../lib/generateReducer';
 
 // test input data
 const defaultState = { count: 0 };
-const inputDefinition = {
+const definition = {
   INCREMENT: state => ({ ...state, count: state.count + 1 }),
   DECREMENT: state => ({ ...state, count: state.count - 1 }),
   SET: (state, { payload }) => ({ ...state, count: payload.count }),
@@ -10,12 +10,12 @@ const inputDefinition = {
 };
 
 test('create a reducer function', () => {
-  const r = generateReducer({ definition: inputDefinition });
+  const r = generateReducer({ definition });
   expect(r).toBeInstanceOf(Function);
 });
 
 test('reducer function can known handle actions', () => {
-  const r = generateReducer({ definition: inputDefinition });
+  const r = generateReducer({ definition });
   const s = defaultState;
 
   expect(r(s, { type: 'INCREMENT' })).toEqual({ count: 1 });
@@ -25,6 +25,6 @@ test('reducer function can known handle actions', () => {
 });
 
 test('reducer function can handle unknown actions', () => {
-  const r = generateReducer({ definition: inputDefinition });
+  const r = generateReducer({ definition });
   expect(r({ count: 42 }, { type: 'UNKNOWN' })).toEqual({ count: 42 });
 });
