@@ -1,5 +1,5 @@
 # Duxedo for Redux
-A tiny utility to help you write cleaner code, and scale redux easily.
+A tiny, easy to use utility to help you write cleaner code, and scale redux easily.
 
 ## What does it do?
 Take a single object definition of actions and how state changes, and produce an object containing  **immutable action constants**, an object containing **consistent FSA compliant action creators** and a **reducer function** that can be included easily in your store configuration, or components, just the way you would usually. No extra fuss.
@@ -13,6 +13,22 @@ Managing state with redux requires quite a bit of boilerplate code, especially w
 
 
 # Enough Talk, Lets Code 
+install with npm:
+```sh
+npm install --save @sigmadigital/duxedo
+```
+or with yarn:
+```sh
+yarn add @sigmadigital/duxedo
+```
+
+Add your dependencies if you haven't already:
+
+```js
+npm install --save react redux react-dom react-redux
+```
+
+**NB**: You'll likely need a build pipeline (ie: webpack, parcel or rollup etc) with babel to transpile es6/es7+.. 
 
 ```js
 // src/store/definitions/counter.js
@@ -55,6 +71,10 @@ the `duxedo` function takes the definition as above, and the default state, that
 Have a look at the `/expample` directory for a full example with redux and react. Alternatively, have a look at the [example app](https://zz2yvwmmy4.codesandbox.io/) or fork the sandbox here:
 
 [![Edit Duxedo for Redux](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/zz2yvwmmy4)
+
+
+## Collaboration
+If you find an **issue**, have an **idea** or would like to contribute, either let us know in the issues, or fork our repo, and open a **pull request**. If you do, please ensure **all tests are passing**, and that any new items have coverage as well.
 
 ----
 A **Sigma Digital** Project. Copyright 2019. License **MIT**.
