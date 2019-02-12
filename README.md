@@ -68,7 +68,7 @@ the `duxedo` function takes the definition as above, and the default state, that
 }
 ```
 
-Have a look at the `/expample` directory for a full example with redux and react. Alternatively, have a look at the [example app](https://zz2yvwmmy4.codesandbox.io/) or fork the sandbox here:
+Have a look at the `/example` directory for a full example with redux and react. Alternatively, have a look at the [example app](https://zz2yvwmmy4.codesandbox.io/) or fork the sandbox here:
 
 [![Edit Duxedo for Redux](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/zz2yvwmmy4)
 
