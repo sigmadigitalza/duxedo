@@ -1,6 +1,6 @@
 {
   "name": "@sigmadigital/duxedo",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "simple utility for reducing redux boilerplate and helping you scale redux",
   "main": "index.js",
   "repository": {
