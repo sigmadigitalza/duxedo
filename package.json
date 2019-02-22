@@ -11,7 +11,6 @@
     "test": "jest --coverage --notify",
     "test:watch": "jest --watchAll --coverage --notify",
     "version": "auto-changelog -p && git add CHANGELOG.md",
-    "postinstall": "node ./install.js",
     "semver:patch": "npm version patch",
     "semver:minor": "npm version minor",
     "semver:major": "npm version major",
