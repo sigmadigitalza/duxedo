@@ -1,4 +1,4 @@
-import duxedo from '../index';
+import duxedo from '../src/index';
 
 // test input data
 const defaultState = { count: 0 };

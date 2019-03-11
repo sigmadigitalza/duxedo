@@ -3,6 +3,7 @@
   "version": "2.0.3",
   "description": "simple utility for reducing redux boilerplate and helping you scale redux",
   "main": "index.js",
+  "module": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sigmadigitalza/duxedo.git"
@@ -10,12 +11,13 @@
   "scripts": {
     "test": "jest --coverage --notify",
     "test:watch": "jest --watchAll --coverage --notify",
+    "build": "rollup ./src/index.js --file ./index.js --format umd --name \"duxedo\"",
     "version": "auto-changelog -p && git add CHANGELOG.md",
     "semver:patch": "npm version patch",
     "semver:minor": "npm version minor",
     "semver:major": "npm version major",
     "distribute": "npm publish --access public",
-    "distribute:patch": "npm run semver:patch && npm run distribute",
+    "distribute:patch": "/**/npm run semver:patch && npm run distribute",
     "distribute:minor": "npm run semver:minor && npm run distribute",
     "distribute:major": "npm run semver:major && npm run distribute",
     "serve:coverage": "http-server ./coverage/lcov-report -p 7357"
@@ -38,7 +40,8 @@
     "flow-bin": "^0.92.0",
     "http-server": "^0.11.1",
     "jest": "^24.1.0",
-    "prettier": "^1.16.4"
+    "prettier": "^1.16.4",
+    "rollup": "^1.6.0"
   },
   "peerDependencies": {
     "redux": ">= 4.0.1"

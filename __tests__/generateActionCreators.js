@@ -1,7 +1,7 @@
 import generateActionCreators, {
   camelCaseAction,
   defaultAction,
-} from '../lib/generateActionCreators';
+} from '../src/lib/generateActionCreators';
 
 // test input and output data
 const testActionns = ['TESTS_SETUP', 'TESTS_STARTED', 'TESTS_RUNNING'];

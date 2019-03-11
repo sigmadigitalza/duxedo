@@ -1,4 +1,4 @@
-import generateReducer from '../lib/generateReducer';
+import generateReducer from '../src/lib/generateReducer';
 
 // test input data
 const defaultState = { count: 0 };

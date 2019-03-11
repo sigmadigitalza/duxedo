@@ -1,4 +1,4 @@
-import generateActions from '../lib/generateActions';
+import generateActions from '../src/lib/generateActions';
 
 // test input data
 const testActionns = ['TESTS_SETUP', 'TESTS_STARTED', 'TESTS_RUNNING'];

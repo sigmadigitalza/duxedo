@@ -14,5 +14,3 @@ export const { reducer, actions, constants } = duxedo({
   definition,
   defaultState,
 });
-
-// export { reducer, actions, constants };
