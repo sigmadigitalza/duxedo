@@ -17,7 +17,7 @@
     "semver:minor": "npm version minor",
     "semver:major": "npm version major",
     "distribute": "npm publish --access public",
-    "distribute:patch": "/**/npm run semver:patch && npm run distribute",
+    "distribute:patch": "npm run semver:patch && npm run distribute",
     "distribute:minor": "npm run semver:minor && npm run distribute",
     "distribute:major": "npm run semver:major && npm run distribute",
     "serve:coverage": "http-server ./coverage/lcov-report -p 7357"
