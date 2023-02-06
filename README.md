@@ -32,7 +32,7 @@ npm install --save react redux react-dom react-redux
 
 ```js
 // src/store/definitions/counter.js
-import duxedo from '@sigmadigital/redux-helpers';
+import duxedo from "@sigmadigital/duxedo";
 
 // define your default state
 const defaultState = { count: 0 };
