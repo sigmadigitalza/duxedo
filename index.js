@@ -26,7 +26,7 @@
     error = false,
   ) => ({ type, payload, meta, error });
 
-  // Assign each item in the array given, as the cameCased key for an action
+  // Assign each item in the array given, as the camelCased key for an action
   // creator with the same type.
   var generateActionCreators = (list = []) =>
     Object.freeze(
